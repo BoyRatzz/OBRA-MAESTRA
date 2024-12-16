@@ -18,11 +18,11 @@ export default function HeroSection() {
           </div>
         </div>
         <div className="flex-1 flex justify-start">
-          <div className="pl-10">
+          <div className="bg-orange-500 rounded-full aspect-square flex" style={{backgroundImage: `url("")`}}>
             <img
               src="https://static.tiktokemoji.com/202409/12/h0Da5zcv.webp"
               alt="coffee logo"
-              className="h-[350px] mt-8"
+              className="h-[350px] mt-8 translate-x-6 drop-shadow-lg"
             />
           </div>
         </div>
@@ -32,7 +32,7 @@ export default function HeroSection() {
               <img
                 src="https://cdn-icons-png.flaticon.com/512/7015/7015957.png"
                 alt="logo"
-                className="h-[50px] flex mt-4"
+                className="h-[50px] flex mt-4 bg-white rounded-full"
               ></img>
               <div className="flex flex-col ml-5">
                 <h2 className="text-lg font-semibold mb-1">Sippy Cups</h2>
@@ -43,7 +43,7 @@ export default function HeroSection() {
               <img
                 src="https://cdn-icons-png.flaticon.com/512/6953/6953926.png"
                 alt="logo"
-                className="h-[50px] flex mt-4"
+                className="h-[50px] flex mt-4 bg-white rounded-full"
               ></img>
               <div className="flex flex-col ml-5">
                 <h2 className="text-lg font-semibold mb-1">Donut</h2>
@@ -54,7 +54,7 @@ export default function HeroSection() {
               <img
                 src="https://clipart-library.com/2023/cookie-png-transparent-images-png-only-39.png"
                 alt="logo"
-                className="h-[50px] flex mt-4"
+                className="h-[50px] flex mt-4 bg-white rounded-full"
               ></img>
               <div className="flex flex-col ml-5">
                 <h2 className="text-lg font-semibold mb-1">Sippy Cups</h2>
