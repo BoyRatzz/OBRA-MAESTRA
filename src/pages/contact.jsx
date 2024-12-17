@@ -1,6 +1,41 @@
+import { useRef, useState } from "react";
 import NavBar from "../nav-bar";
+import Feedback from "./feedback";
 
-export default function () {
+export default function Contact() {
+  const [feedback, setFeedback] = useState([
+    {
+      fullName: "Alej Pogi",
+      company: "SLU",
+      message: "ice cream good",
+    },
+    {
+      fullName: "Jose Cutie",
+      company: "USHS",
+      message: "ice cream yummy",
+    },
+  ]);
+
+  const nameRef = useRef(null);
+  const companyRef = useRef(null);
+  const emailRef = useRef(null);
+  const messageRef = useRef(null);
+
+  const handleSubmit = () => {
+    const newFeedBack = {
+      fullName: nameRef.current.value,
+      company: companyRef.current.value,
+      email: emailRef.current.value,
+      message: messageRef.current.value,
+    };
+    setFeedback((prev) => [...prev, newFeedBack]);
+    nameRef.current.value = "";
+    companyRef.current.value = "";
+    emailRef.current.value = "";
+    messageRef.current.value = "";
+    nameRef.current.focus();
+  };
+
   return (
     <main className="flex flex-col h-screen w-screen bg-slate-200 items-center">
       <NavBar />
@@ -39,11 +74,13 @@ export default function () {
                   type="text"
                   placeholder="   Full Name"
                   className="rounded-full h-10"
+                  ref={nameRef}
                 />
                 <input
                   type="text"
                   placeholder="   Company/Institution"
                   className="rounded-full h-10"
+                  ref={companyRef}
                 />
               </div>
               <div className="flex mx-auto w-full px-7">
@@ -51,6 +88,7 @@ export default function () {
                   type="email"
                   placeholder="Email"
                   className="rounded-full h-10 w-full text-center"
+                  ref={emailRef}
                 />
               </div>
               <div className="items-center justify-center flex p-7 pt-2 pb-1">
@@ -58,17 +96,23 @@ export default function () {
                   type="text"
                   placeholder="Leave your comment / suggestion here"
                   className="w-full h-[300px] rounded-2xl text-center"
+                  ref={messageRef}
                 />
               </div>
               <div className="w-full flex justify-end pr-7">
-                <button className="bg-white rounded-lg px-7 flex">
+                <button
+                  className="bg-white rounded-lg px-7 flex"
+                  onClick={handleSubmit}
+                >
                   Submit
                 </button>
               </div>
             </div>
           </div>
         </div>
-        <div className="flex h-[200px] bg-yellow-300"></div>
+        <div className="flex h-[200px] bg-yellow-300">
+          <Feedback data={feedback} newFeed={setFeedback} />
+        </div>
       </div>
     </main>
   );

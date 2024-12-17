@@ -4,7 +4,7 @@ import NavBar from "./nav-bar";
 function App() {
   return (
     <div className="flex flex-col bg-orange-300 h-screen w-screen items-center">
-      <div className="w-full max-w-[1280px] flex-col flex">
+      <div className="w-full max-w-[1920px] flex-col flex h-screen">
         <NavBar />
         <HeroSection />
         <div className="flex flex-1 mx-auto">
@@ -17,7 +17,9 @@ function App() {
                   className="w-[100px] mx-auto absolute left-3 -top-5 drop-shadow-2xl"
                 />
               </div>
-              <h2 className="mx-auto text-white text-nowrap pt-4">Caramel Ribbon</h2>
+              <h2 className="mx-auto text-white text-nowrap pt-4">
+                Caramel Ribbon
+              </h2>
               <button className="text-white text-nowrap">Add to order +</button>
             </div>
             <div className="flex flex-col flex-1 px-10 -translate-y-20">
@@ -28,7 +30,9 @@ function App() {
                   className="w-[140px] mx-auto drop-shadow-2xl"
                 />
               </div>
-              <h2 className="mx-auto text-white text-nowrap pt-4">Almond Fudge</h2>
+              <h2 className="mx-auto text-white text-nowrap pt-4">
+                Almond Fudge
+              </h2>
               <button className="text-white text-nowrap">Add to order +</button>
             </div>
             <div className="flex flex-col flex-1 px-10 -translate-y-20">
@@ -39,7 +43,9 @@ function App() {
                   className="w-[120px] mx-auto drop-shadow-2xl absolute -top-7"
                 />
               </div>
-              <h2 className="mx-auto text-white text-nowrap w-[120px] pt-4">Strawberry Funnel</h2>
+              <h2 className="mx-auto text-white text-nowrap w-[120px] pt-4">
+                Strawberry Funnel
+              </h2>
               <button className="text-white text-nowrap">Add to order +</button>
             </div>
           </div>
