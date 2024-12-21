@@ -3,7 +3,7 @@ export default function HeroSection() {
     <div className="flex-1 flex flex-col">
       <div className="flex h-[400px]">
         <div className="flex-1 flex-col flex">
-          <div className="pt-[50px] pl-[50px]">
+          <div className="pt-[50px] pl-[20px]">
             <h1 className="text-6xl font-bold">
               Midnight <br /> Frappuccino
             </h1>
@@ -18,7 +18,7 @@ export default function HeroSection() {
           </div>
         </div>
         <div className="flex-1 flex justify-start">
-          <div className="bg-orange-500 rounded-full aspect-square flex" style={{backgroundImage: `url("")`}}>
+          <div className="bg-amber-600 rounded-full aspect-square flex" style={{backgroundImage: `url("")`}}>
             <img
               src="https://static.tiktokemoji.com/202409/12/h0Da5zcv.webp"
               alt="coffee logo"
@@ -27,7 +27,7 @@ export default function HeroSection() {
           </div>
         </div>
         <div className="flex-1 flex-col flex">
-          <div className="pt-[75px] pl-[75px]">
+          <div className="pt-[75px] pl-[100px]">
             <div className="flex">
               <img
                 src="https://cdn-icons-png.flaticon.com/512/7015/7015957.png"

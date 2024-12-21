@@ -28,7 +28,30 @@ export default function Contact() {
       email: emailRef.current.value,
       message: messageRef.current.value,
     };
-    setFeedback((prev) => [...prev, newFeedBack]);
+
+    if (
+      nameRef.current.value === "" ||
+      nameRef.current.value === null ||
+      companyRef.current.value === "" ||
+      companyRef.current.value === null ||
+      emailRef.current.value === "" ||
+      emailRef.current.value === null ||
+      messageRef.current.value === "" ||
+      messageRef.current.value === null
+    ) {
+      alert("Fill-up the form accordingly");
+      return false;
+    } else if (!emailRef.current.value.includes("@" && ".com")) {
+      alert("Please put a proper email-address");
+      return false;
+    } else {
+      alert("Form was submitted successfully");
+    }
+
+    setFeedback((prev) => {
+      return [...prev, newFeedBack];
+    });
+
     nameRef.current.value = "";
     companyRef.current.value = "";
     emailRef.current.value = "";
@@ -37,49 +60,60 @@ export default function Contact() {
   };
 
   return (
-    <main className="flex flex-col h-screen w-screen bg-slate-200 items-center">
+    <main className="flex flex-col bg-gradient-to-b from-green-200 to-green-500 items-center h-screen">
       <NavBar />
-      <div className="flex flex-col max-w-[1280px] w-full h-[720px]">
-        <div className="flex flex-1 bg-indigo-300">
-          <div className="flex flex-1 flex-col">
-            <div className="flex flex-col bg-blue-800 flex-1">
-              <h1>Contact Us</h1>
-              <p>
+      <div className="flex flex-col max-w-[1280px] w-full">
+        <div className="flex flex-1">
+          <div className="flex flex-1 flex-col drop-shadow-2xl gap-y-10">
+            <div className="flex flex-col flex-1 p-5">
+              <h1 className="text-5xl font-bold pb-5">Contact Us</h1>
+              <p className="text-base font-sans pb-2 w-[400px]">
                 Email, call, or complete the form to learn how we can be of
                 service to you.
               </p>
-              <p>MrPogi@gmail.com</p>
-              <p>456-9999</p>
-              <p>Customer Support</p>
+              <p className="text-base font-sans pb-2">MrPogi@gmail.com</p>
+              <p className="text-base font-sans pb-2">456-9999</p>
+              <p className="text-base font-sans underline">Customer Support</p>
             </div>
-            <div className="bg-blue-300 flex flex-1 gap-20">
-              <div>
-                <h1>Customer Support</h1>
-                <p>asdasdasdasdas</p>
+            <div className="flex flex-1 gap-10 mx-auto text-justify border-t border-black">
+              <div className="p-5 w-[250px]">
+                <h1 className="font-semibold pb-1">Customer Support</h1>
+                <p className="font-sans">
+                  Our support team is available around the clock to address any
+                  concerns or queries you may have.
+                </p>
               </div>
-              <div>
-                <h1>Feedback and Suggestions</h1>
-                <p>asdasdasdasda</p>
+              <div className="p-5 w-[250px]">
+                <h1 className="font-semibold pb-1">Feedback and Suggestions</h1>
+                <p className="font-sans">
+                  We value your feedback and are continuously working to improve
+                  Starbucks. Your input is crucial in shaping the future of our
+                  company.
+                </p>
               </div>
-              <div>
-                <h1>Media Inquiries</h1>
-                <p>asdasdasda</p>
+              <div className="p-5 w-[250px]">
+                <h1 className="font-semibold pb-1">Media Inquiries</h1>
+                <p className="font-sans">
+                  For media-related questions or press inquiries, please contact
+                  us at media@starbucks.com
+                </p>
               </div>
             </div>
           </div>
-          <div className="flex flex-col flex-1 bg-purple-500 justify-center items-center">
-            <div className="flex flex-col border border-black h-[450px] w-[450px] rounded-2xl ">
+          <div className="flex flex-col flex-1 justify-center items-center px-2 drop-shadow-xl">
+            <div className="flex flex-col h-[450px] w-[450px] rounded-2xl drop-shadow-lg bg-gradient-to-t from-green-200 to-green-500">
               <div className="flex p-5 pb-2 mx-auto gap-8">
                 <input
+                  id="inputName"
                   type="text"
                   placeholder="   Full Name"
-                  className="rounded-full h-10"
+                  className="rounded-full h-10 border-2 border-gray-200"
                   ref={nameRef}
                 />
                 <input
                   type="text"
                   placeholder="   Company/Institution"
-                  className="rounded-full h-10"
+                  className="rounded-full h-10 border-2 border-gray-200"
                   ref={companyRef}
                 />
               </div>
@@ -87,21 +121,21 @@ export default function Contact() {
                 <input
                   type="email"
                   placeholder="Email"
-                  className="rounded-full h-10 w-full text-center"
+                  className="rounded-full h-10 w-full text-center border-2 border-gray-200"
                   ref={emailRef}
                 />
               </div>
-              <div className="items-center justify-center flex p-7 pt-2 pb-1">
+              <div className="items-center justify-center flex p-7 pt-2 pb-1 border-gray-200">
                 <textarea
                   type="text"
                   placeholder="Leave your comment / suggestion here"
-                  className="w-full h-[300px] rounded-2xl text-center"
+                  className="w-full h-[300px] rounded-2xl text-center border-2 border-gray-200"
                   ref={messageRef}
                 />
               </div>
               <div className="w-full flex justify-end pr-7">
                 <button
-                  className="bg-white rounded-lg px-7 flex"
+                  className="bg-white rounded-lg px-7 flex text-sm border-2 border-gray-200"
                   onClick={handleSubmit}
                 >
                   Submit
@@ -110,7 +144,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <div className="flex h-[200px] bg-yellow-300">
+        <div className="flex border-t border-black translate-y-4 drop-shadow-2xl">
           <Feedback data={feedback} newFeed={setFeedback} />
         </div>
       </div>

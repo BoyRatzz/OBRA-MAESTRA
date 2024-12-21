@@ -3,12 +3,14 @@ import NavBar from "./nav-bar";
 
 function App() {
   return (
-    <div className="flex flex-col bg-orange-300 h-screen w-screen items-center">
-      <div className="w-full max-w-[1920px] flex-col flex h-screen">
-        <NavBar />
-        <HeroSection />
-        <div className="flex flex-1 mx-auto">
-          <div className="bg-blue-950 flex gap-[100px] border-transparent rounded-t-2xl h-[200px] mt-28">
+    <div className="flex flex-col bg-gradient-to-b from-green-200 to-green-500 h-full w-full items-center">
+      <div className="w-screen max-w-[1280px] flex-col flex h-screen">
+          <NavBar />
+        <div className="flex-1 flex py-8">
+          <HeroSection />
+        </div>
+        <div className="flex flex-1 mx-auto w-full">
+          <div className="bg-blue-950 flex gap-[100px] border-transparent rounded-t-2xl mt-28 mx-auto">
             <div className="flex flex-col flex-1 -translate-y-20 px-10">
               <div className="flex bg-amber-500 rounded-full aspect-square relative">
                 <img
